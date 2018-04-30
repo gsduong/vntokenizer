@@ -1,5 +1,6 @@
 package com.example;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
@@ -9,12 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.apache.commons.io.FileUtils;
+
 public class CustomFileReader {
 	private List<String> stopwords;
 
 	public CustomFileReader() {
 		stopwords = new ArrayList<String>();
-		this.read();
+		this.readFromClassPath();
+		// this.read();
 	}
 
 	private void read() {
@@ -39,5 +43,22 @@ public class CustomFileReader {
 
 	public List<String> getStopWords() {
 		return this.stopwords;
+	}
+
+	private void readFromClassPath() {
+
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("stopwords.txt").getFile());
+		try {
+			@SuppressWarnings("deprecation")
+			String data = FileUtils.readFileToString(file);
+			String[] array = data.split("\\s+");
+			for (String string : array) {
+				this.stopwords.add(string);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
