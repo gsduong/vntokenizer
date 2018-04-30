@@ -17,8 +17,8 @@ public class CustomFileReader {
 
 	public CustomFileReader() {
 		stopwords = new ArrayList<String>();
-		this.readFromClassPath();
-		// this.read();
+		// this.readFromClassPath();
+		this.read();
 	}
 
 	private void read() {
