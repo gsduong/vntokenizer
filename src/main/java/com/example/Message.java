@@ -8,12 +8,13 @@ import ai.vitk.type.Token;
 
 public class Message {
 	private String originalText;
+	private String tokenizedText;
 	private List<String> tokens;
 
 	public Message(String _originalText) {
 		this.originalText = _originalText;
 		this.tokens = new ArrayList<String>();
-		this.setTokens();
+		this.tokenize();
 		this.clean();
 	}
 
@@ -21,12 +22,15 @@ public class Message {
 		return this.originalText;
 	}
 
-	public void setTokens() {
+	private void tokenize() {
+		StringBuffer buffer = new StringBuffer();
 		Tokenizer tokenizer = new Tokenizer();
 		List<Token> words = tokenizer.tokenize(this.originalText.toLowerCase());
 		for (Token token : words) {
 			tokens.add(token.getWord().replace(" ", "_"));
+			buffer.append(token.getWord().replace(" ", "_") + " ");
 		}
+		this.tokenizedText = buffer.toString().trim();
 		return;
 	}
 
@@ -57,5 +61,9 @@ public class Message {
 		}
 
 		this.tokens.removeAll(toRemove);
+	}
+
+	public String getTokenizedText() {
+		return this.tokenizedText;
 	}
 }
