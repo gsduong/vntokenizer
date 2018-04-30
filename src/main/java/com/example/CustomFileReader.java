@@ -55,6 +55,7 @@ public class CustomFileReader {
 			String[] array = data.split("\\s+");
 			for (String string : array) {
 				this.stopwords.add(string);
+				System.out.println(string);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
