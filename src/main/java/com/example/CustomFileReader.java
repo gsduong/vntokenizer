@@ -17,14 +17,14 @@ public class CustomFileReader {
 
 	public CustomFileReader() {
 		stopwords = new ArrayList<String>();
-		this.readFromClassPath();
-		// this.read();
+		// this.readFromClassPath();
+		this.read();
 	}
 
 	private void read() {
 		Path path = null;
 		try {
-			path = Paths.get(getClass().getClassLoader().getResource("stopwords.txt").toURI());
+			path = Paths.get(getClass().getClassLoader().getResource("/stopwords.txt").toURI());
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
