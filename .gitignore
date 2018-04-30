@@ -2,7 +2,7 @@ target
 .env
 .idea/
 *.iml
-
+src/main/java/com/example/Test.java
 .metadata
 bin/
 tmp/

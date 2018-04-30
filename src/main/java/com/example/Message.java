@@ -48,10 +48,10 @@ public class Message {
 		toRemove.clear();
 
 		// Remove stopwords
-		CustomFileReader reader = new CustomFileReader();
+		StopWordsService service = new StopWordsService();
 
 		for (String string : this.tokens) {
-			if (reader.getStopWords().contains(string)) {
+			if (service.getStopWords().contains(string)) {
 				toRemove.add(string);
 			}
 		}
