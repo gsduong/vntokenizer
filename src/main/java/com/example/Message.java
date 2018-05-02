@@ -9,6 +9,7 @@ import ai.vitk.type.Token;
 public class Message {
 	private String originalText;
 	private String tokenizedText;
+	private String finalText;
 	private List<String> tokens;
 	private int size;
 
@@ -63,10 +64,20 @@ public class Message {
 		}
 
 		this.tokens.removeAll(toRemove);
+		StringBuffer buffer = new StringBuffer();
+		for (String string : this.tokens) {
+			buffer.append(string + " ");
+		}
+		this.finalText = buffer.toString().trim();
+
 	}
 
 	public String getTokenizedText() {
 		return this.tokenizedText;
+	}
+
+	public String getFinalText() {
+		return this.finalText;
 	}
 
 	public int getTokensSize() {
