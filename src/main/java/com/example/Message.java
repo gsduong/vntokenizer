@@ -10,14 +10,14 @@ public class Message {
 	private String originalText;
 	private String tokenizedText;
 	private List<String> tokens;
-	private int tokensLength;
+	private int size;
 
 	public Message(String _originalText) {
 		this.originalText = _originalText;
 		this.tokens = new ArrayList<String>();
 		this.tokenize();
 		this.clean();
-		this.tokensLength = this.tokens.size();
+		this.size = this.tokens.size();
 	}
 
 	public String getOriginalText() {
@@ -69,8 +69,8 @@ public class Message {
 		return this.tokenizedText;
 	}
 
-	public int getTokensLenght() {
-		return this.tokensLength;
+	public int getTokensSize() {
+		return this.size;
 	}
 
 }
