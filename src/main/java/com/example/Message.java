@@ -17,7 +17,6 @@ public class Message {
 		this.originalText = _originalText;
 		this.tokens = new ArrayList<String>();
 		this.tokenize();
-		this.clean();
 		this.size = this.tokens.size();
 	}
 
@@ -29,32 +28,27 @@ public class Message {
 		StringBuffer buffer = new StringBuffer();
 		Tokenizer tokenizer = new Tokenizer();
 		List<Token> words = tokenizer.tokenize(this.originalText.toLowerCase());
+		List<String> toRemove = new ArrayList<String>();
 		for (Token token : words) {
+			if (token.getLemma().equals("PUNCT")) {
+				toRemove.add(token.getWord());
+			}
 			tokens.add(token.getWord().replace(" ", "_"));
 			buffer.append(token.getWord().replace(" ", "_") + " ");
 		}
 		this.tokenizedText = buffer.toString().trim();
-		return;
-	}
 
-	public List<String> getTokens() {
-		return this.tokens;
-	}
-
-	private void clean() {
 		// Remove numbers
 		// Remove punctuation
-		List<String> toRemove = new ArrayList<String>();
 		for (String token : this.tokens) {
 			if (token.matches(".*\\d+.*") || token.length() == 1) {
 				toRemove.add(token);
 			}
 		}
-
 		this.tokens.removeAll(toRemove);
-		toRemove.clear();
 
 		// Remove stopwords
+		toRemove.clear();
 		StopWordsService service = new StopWordsService();
 
 		for (String string : this.tokens) {
@@ -62,14 +56,18 @@ public class Message {
 				toRemove.add(string);
 			}
 		}
-
 		this.tokens.removeAll(toRemove);
-		StringBuffer buffer = new StringBuffer();
+
+		buffer = new StringBuffer();
 		for (String string : this.tokens) {
 			buffer.append(string + " ");
 		}
 		this.finalText = buffer.toString().trim();
+		return;
+	}
 
+	public List<String> getTokens() {
+		return this.tokens;
 	}
 
 	public String getTokenizedText() {
