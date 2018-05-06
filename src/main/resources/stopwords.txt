@@ -535,7 +535,6 @@ gần_như
 gần_xa
 gần_đây
 gần_đến
-gặp
 gặp_khó_khăn
 gặp_phải
 gồm
@@ -1667,7 +1666,6 @@ về_nước
 về_phần
 về_sau
 về_tay
-vị_trí
 vị_tất
 vốn_dĩ
 với
@@ -1793,7 +1791,6 @@ yêu_cầu
 đánh_giá
 đánh_đùng
 đáo_để
-đâu
 đâu_có
 đâu_cũng
 đâu_như
@@ -1926,7 +1923,6 @@ yêu_cầu
 ớ_này
 ờ
 ờ_ờ
-ở
 ở_lại
 ở_như
 ở_nhờ
