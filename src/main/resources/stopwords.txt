@@ -423,7 +423,6 @@ cả_tin
 cả_ăn
 cả_đến
 cảm_thấy
-cảm_ơn
 cấp
 cấp_số
 cấp_trực_tiếp
@@ -1259,7 +1258,6 @@ số_người
 số_phần
 số_thiếu
 sốt_sột
-sớm
 sớm_ngày
 sở_dĩ
 sử_dụng
