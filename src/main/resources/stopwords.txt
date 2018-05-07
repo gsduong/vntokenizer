@@ -8,6 +8,11 @@ alô
 amen
 anh
 anh_ấy
+bot
+admin
+ad
+chủ_quán
+chủ
 á
 à
 ã
