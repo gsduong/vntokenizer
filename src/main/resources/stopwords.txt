@@ -917,6 +917,7 @@ nhà_ngoài
 nhà_ngươi
 nhà_tôi
 nhà_việc
+nhà_hàng
 nhân_dịp
 nhân_tiện
 nhé
@@ -930,6 +931,7 @@ nhìn_xuống
 nhóm
 nhón_nhén
 như
+shop
 như_ai
 như_chơi
 như_không
