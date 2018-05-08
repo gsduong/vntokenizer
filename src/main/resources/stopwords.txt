@@ -1256,7 +1256,6 @@ sắp_đặt
 sẽ
 sẽ_biết
 sẽ_hay
-số
 số_cho_biết
 số_cụ_thể
 số_loại
